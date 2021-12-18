@@ -1,0 +1,96 @@
+User: 127.0.0.1 - December 13, 2021, 3:09 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"97","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"2"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: 127.0.0.1 - December 13, 2021, 3:09 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"97","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"1"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: 127.0.0.1 - December 13, 2021, 3:09 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"97","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"3"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: 127.0.0.1 - December 13, 2021, 3:09 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"97","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"4"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:10 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"4"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:10 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"1"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:10 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"3"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:10 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"2"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:25 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"4"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:25 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"1"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:25 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"2"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+
+User: ::1 - December 13, 2021, 3:25 pm
+Attempt function name : completed_requests_db
+Posted data : {"user_id":"365","device_type":"1","device_unique_code":"DASH","date":"lastMonths","tipo_dashboard":"3"}
+-------------------------
+
+FIle Posted data : []
+-------------------------
+

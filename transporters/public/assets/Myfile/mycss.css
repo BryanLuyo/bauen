@@ -1,0 +1,26 @@
+.cursor_pointer{
+    cursor:pointer;
+}
+.mergin_one{
+    margin:1px
+}
+.button_class{
+    margin: 7px;
+}
+.label_class_css{
+    margin: 3px;
+    text-align: left !important;
+}
+.input_class_css{
+    margin: 7px;
+}
+.language_change{
+    padding: 0px !important;
+    width:90px !important;     
+}
+.my_ar_alignment{
+  float: right !important  ;
+}
+.my_en_alignment{
+    float: left;
+}

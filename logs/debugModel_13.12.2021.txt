@@ -1,0 +1,442 @@
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '97'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '97'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '97'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '97'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date, `pickup_time` AS `hour`
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '97'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date, SUM(IF(TIMESTAMPDIFF(SECOND, `ta_date`, it_date) <= 10800, 1, 0)) AS ontime_count
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH) AND NOT (ta_date IS NULL AND `it_date` IS NULL )
+AND `trns_requests`.`user_id` = '97'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, `trailer_id`, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '97'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `trailer_id`, YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, `request_status`, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date
+FROM `trns_requests`
+WHERE `trns_requests`.`request_status` IN(13, 14)
+AND `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '97'
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `request_status`, YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, `request_status`, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date
+FROM `trns_requests`
+WHERE `trns_requests`.`request_status` IN(13, 14)
+AND `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `request_status`, YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, `trailer_id`, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `trailer_id`, YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date, SUM(IF(TIMESTAMPDIFF(SECOND, `ta_date`, it_date) <= 10800, 1, 0)) AS ontime_count
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH) AND NOT (ta_date IS NULL AND `it_date` IS NULL )
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date, `pickup_time` AS `hour`
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, `request_status`, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date
+FROM `trns_requests`
+WHERE `trns_requests`.`request_status` IN(13, 14)
+AND `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `request_status`, YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date, SUM(IF(TIMESTAMPDIFF(SECOND, `ta_date`, it_date) <= 10800, 1, 0)) AS ontime_count
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH) AND NOT (ta_date IS NULL AND `it_date` IS NULL )
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date, `pickup_time` AS `hour`
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT `trns_users`.*
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '365'
+AND `trns_users`.`user_type` = '0'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT COUNT(*) AS count, `trailer_id`, DATE_FORMAT(pickup_date, "%d-%m-%Y") AS date
+FROM `trns_requests`
+WHERE `pickup_date` > date_add(pickup_date, INTERVAL -6 MONTH)
+AND `trns_requests`.`user_id` = '365'
+AND `trns_requests`.`request_status` = 13
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `trailer_id`, YEAR(pickup_date), MONTH(pickup_date)
+____________________________________________________________________________________________________
+SELECT `trns_admins`.`admin_id`, `trns_admins`.`name`, `trns_admins`.`is_super_admin`, `trns_admins`.`admin_type`
+FROM `trns_admins`
+WHERE `trns_admins`.`email` = 'prueba@prueba.com'
+AND `trns_admins`.`password` = 'e10adc3949ba59abbe56e057f20f883e'
+AND `trns_admins`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_admins`.`admin_id`, `trns_admins`.`name`, `trns_admins`.`is_super_admin`, `trns_admins`.`admin_type`
+FROM `trns_admins`
+WHERE `trns_admins`.`email` = 'prueba@prueba.com'
+AND `trns_admins`.`password` = '25d55ad283aa400af464c76d713c07ad'
+AND `trns_admins`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_admins`.`admin_id`, `trns_admins`.`name`, `trns_admins`.`is_super_admin`, `trns_admins`.`admin_type`
+FROM `trns_admins`
+WHERE `trns_admins`.`email` = 'prueba@prueba.com'
+AND `trns_admins`.`password` = '8224f0523491d5a7787f0ea457419024'
+AND `trns_admins`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_admins`.`admin_id`, `trns_admins`.`name`, `trns_admins`.`is_super_admin`, `trns_admins`.`admin_type`
+FROM `trns_admins`
+WHERE `trns_admins`.`email` = 'prueba@prueba.com'
+AND `trns_admins`.`password` = 'c893bad68927b457dbed39460e6afd62'
+AND `trns_admins`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_requests`.*, IFNULL((SELECT concat(`trns_request_driver_locations`.`latitude`, ', ', `trns_request_driver_locations`.`longitude`) FROM trns_request_driver_locations WHERE trns_request_driver_locations.request_id=trns_requests.request_id ORDER BY driver_location_id DESC limit 0, 1), '') as driver_location, IFNULL((SELECT COUNT(trns_request_bids.request_id) FROM trns_request_bids, trns_users 
+														  WHERE trns_request_bids.user_id=trns_users.user_id 
+														  AND trns_request_bids.is_deleted='0' 
+														  AND trns_users.is_deleted='0'
+														  AND trns_request_bids.request_id = trns_requests.request_id), 0) AS total_bids, `trns_users`.`first_name` `cus_first_name`, `trns_users`.`last_name` `cus_last_name`, `trns_users`.`email` `cus_email`, `trns_users`.`phone_no` `cus_phone_no`, `trns_users`.`image` `cus_image`, `trns_users`.`firebase_id` `cus_firebase_id`, `trns_users`.`company_name` `cus_company_name`, IFNULL(trns_user_transporter.id_transporter, "") id_transporter, IFNULL(cir.first_name, "") cus_first_name_cir, IFNULL(cir.last_name, "") cus_last_name_cir, IFNULL(cir.email, "") cus_email_cir, IFNULL(cir.phone_no, "") cus_phone_no_cir, IFNULL(cir.image, "") cus_image_cir, IFNULL(cir.firebase_id, "") cus_firebase_id_cir, IFNULL(cir.company_name, "") cus_company_name_cir, `trns_trailers`.`min_load` `trailer_min_load`, `trns_trailers`.`max_load` `trailer_max_load`, `trns_trailers`.`image` `trailer_image`, IFNULL(trailer_name, name) trailer_name, `trns_loadtypes`.`load_name`, IFNULL(trans.first_name, "") trans_first_name, IFNULL(trans.last_name, "") trans_last_name, IFNULL(trans.email, "") trans_email, IFNULL(trans.phone_no, "") trans_phone_no, IFNULL(trans.company_name, "") trans_company_name, IFNULL(driver.first_name, "") driver_first_name, IFNULL(driver.last_name, "") driver_last_name, IFNULL(driver.email, "") driver_email, IFNULL(driver.phone_no, "") driver_phone_no, IFNULL(driver.image, "") driver_image, IFNULL(trns_vehicles.plate_no, "") plate_no, IFNULL(trns_vehicles.vehicle_color, "") vehicle_color, IFNULL(trns_request_bids.bid_id, "") bid_id, IFNULL(trns_request_bids.bid_amount, "") bid_amount, IFNULL(trns_request_bids.bid_status, "") bid_status, IFNULL(trns_request_bids.bid_comment, "") bid_comment, IFNULL(trns_request_bids.cancel_comment, "") cancel_comment, IFNULL(trns_request_bids.create_date, "") bid_create_date, IFNULL(TRUNCATE(AVG(cusrating.rating), 2), 0) cus_rating, IFNULL(TRUNCATE(AVG(transrating.rating), 2), 0) trans_rating, IFNULL(TRUNCATE(AVG(driverrating.rating), 2), 0) driver_rating, IFNULL(requsertating.rating_id, "") cus_req_rating_id, IFNULL(requsertating.rating, "") cus_req_rating, IFNULL(requsertating.communication_rating, "") cus_req_communication_rating, IFNULL(requsertating.trust_rating, "") cus_req_trust_rating, IFNULL(requsertating.quality_rating, "") cus_req_quality_rating, IFNULL(requsertating.user_comment, "") cus_req_user_comment, IFNULL(reqtranstating.rating_id, "") trans_req_rating_id, IFNULL(reqtranstating.rating, "") trans_req_rating, IFNULL(reqtranstating.communication_rating, "") trans_req_communication_rating, IFNULL(reqtranstating.trust_rating, "") trans_req_trust_rating, IFNULL(reqtranstating.quality_rating, "") trans_req_quality_rating, IFNULL(reqtranstating.user_comment, "") trans_req_user_comment
+FROM `trns_requests`
+INNER JOIN `trns_users` ON `trns_requests`.`user_id`=`trns_users`.`user_id`
+LEFT JOIN `trns_user_transporter` ON `trns_requests`.`user_id`=`trns_user_transporter`.`id_customer`
+LEFT JOIN `trns_users` as `cir` ON `trns_requests`.`creater_id`=`cir`.`user_id`
+INNER JOIN `trns_trailers` ON `trns_requests`.`trailer_id`=`trns_trailers`.`trailer_id`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`language_id` ="2"
+INNER JOIN `trns_loadtypes` ON `trns_requests`.`loadtype_id`=`trns_loadtypes`.`loadtype_id`
+LEFT JOIN `trns_users` as `trans` ON `trns_requests`.`transporter_id`=`trans`.`user_id`
+LEFT JOIN `trns_users` as `driver` ON `trns_requests`.`driver_id`=`driver`.`user_id`
+LEFT JOIN `trns_vehicles` ON `trns_requests`.`vehicle_id`=`trns_vehicles`.`vehicle_id`
+LEFT JOIN `trns_request_bids` ON `trns_requests`.`bid_id`=`trns_request_bids`.`bid_id`
+LEFT JOIN `trns_user_ratings` as `cusrating` ON `trns_requests`.`user_id`=`cusrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `transrating` ON `trns_requests`.`transporter_id`=`transrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `driverrating` ON `trns_requests`.`driver_id`=`driverrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `requsertating` ON `trns_requests`.`user_id`=`requsertating`.`receiver_user_id` AND `trns_requests`.`request_id`=`requsertating`.`request_id` AND `requsertating`.`is_deleted` ="0"
+LEFT JOIN `trns_user_ratings` as `reqtranstating` ON `trns_requests`.`transporter_id`=`reqtranstating`.`receiver_user_id` AND `trns_requests`.`request_id`=`reqtranstating`.`request_id` AND `reqtranstating`.`is_deleted` ="0"
+WHERE `trns_requests`.`user_id` > '0'
+AND `trns_requests`.`request_status` = '0'
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `request_id`
+ORDER BY `trns_requests`.`pickup_date` DESC, `pickup_time` DESC
+____________________________________________________________________________________________________
+SELECT `trns_documenttypes`.*
+FROM `trns_documenttypes`
+WHERE `trns_documenttypes`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_documenttypes`.*
+FROM `trns_documenttypes`
+WHERE `trns_documenttypes`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_loadtypes`.`loadtype_id`, `trns_loadtypes`.`load_name`, `trns_loadtypes`.`is_blocked`, IFNULL(loadtype_name, load_name) load_name
+FROM `trns_loadtypes`
+LEFT JOIN `trns_language_loadtypes` ON `trns_loadtypes`.`loadtype_id`=`trns_language_loadtypes`.`loadtype_id` AND `trns_language_loadtypes`.`is_blocked` ="0" AND `trns_language_loadtypes`.`is_deleted` ="0" AND `trns_language_loadtypes`.`language_id` ="2"
+WHERE `trns_loadtypes`.`is_deleted` = '0'
+ORDER BY `trns_loadtypes`.`load_name` ASC
+____________________________________________________________________________________________________
+SELECT `trns_requests`.*, `trns_users`.`first_name` `cus_first_name`, `trns_users`.`last_name` `cus_last_name`, `trns_users`.`email` `cus_email`, `trns_users`.`phone_no` `cus_phone_no`, `trns_users`.`image` `cus_image`, `trns_users`.`firebase_id` `cus_firebase_id`, `trns_users`.`company_name` `cus_company_name`, IFNULL(trns_user_transporter.id_transporter, "") id_transporter, IFNULL(cir.first_name, "") cus_first_name_cir, IFNULL(cir.last_name, "") cus_last_name_cir, IFNULL(cir.email, "") cus_email_cir, IFNULL(cir.phone_no, "") cus_phone_no_cir, IFNULL(cir.image, "") cus_image_cir, IFNULL(cir.firebase_id, "") cus_firebase_id_cir, IFNULL(cir.company_name, "") cus_company_name_cir, `trns_trailers`.`min_load` `trailer_min_load`, `trns_trailers`.`max_load` `trailer_max_load`, `trns_trailers`.`image` `trailer_image`, IFNULL(trailer_name, name) trailer_name, `trns_loadtypes`.`load_name`, IFNULL(trans.first_name, "") trans_first_name, IFNULL(trans.last_name, "") trans_last_name, IFNULL(trans.email, "") trans_email, IFNULL(trans.phone_no, "") trans_phone_no, IFNULL(trans.company_name, "") trans_company_name, IFNULL(driver.first_name, "") driver_first_name, IFNULL(driver.last_name, "") driver_last_name, IFNULL(driver.email, "") driver_email, IFNULL(driver.phone_no, "") driver_phone_no, IFNULL(driver.image, "") driver_image, IFNULL(trns_vehicles.plate_no, "") plate_no, IFNULL(trns_vehicles.vehicle_color, "") vehicle_color
+FROM `trns_requests`
+INNER JOIN `trns_users` ON `trns_requests`.`user_id`=`trns_users`.`user_id`
+LEFT JOIN `trns_user_transporter` ON `trns_requests`.`user_id`=`trns_user_transporter`.`id_customer`
+LEFT JOIN `trns_users` as `cir` ON `trns_requests`.`creater_id`=`cir`.`user_id`
+INNER JOIN `trns_trailers` ON `trns_requests`.`trailer_id`=`trns_trailers`.`trailer_id`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`language_id` ="2"
+INNER JOIN `trns_loadtypes` ON `trns_requests`.`loadtype_id`=`trns_loadtypes`.`loadtype_id`
+LEFT JOIN `trns_users` as `trans` ON `trns_requests`.`transporter_id`=`trans`.`user_id`
+LEFT JOIN `trns_users` as `driver` ON `trns_requests`.`driver_id`=`driver`.`user_id`
+LEFT JOIN `trns_vehicles` ON `trns_requests`.`vehicle_id`=`trns_vehicles`.`vehicle_id`
+WHERE `trns_requests`.`is_deleted` = '0'
+GROUP BY `request_id`
+ORDER BY `trns_requests`.`pickup_date` DESC, `pickup_time` DESC
+____________________________________________________________________________________________________
+SELECT `trns_trailers`.`trailer_id`, `trns_trailers`.`name`, `trns_trailers`.`image`, `trns_trailers`.`min_load`, `trns_trailers`.`max_load`, IFNULL(trailer_name, name) name
+FROM `trns_trailers`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`is_blocked` ="0" AND `trns_language_trailers`.`is_deleted` ="0" AND `trns_language_trailers`.`language_id` ="2"
+WHERE `trns_trailers`.`is_deleted` = '0'
+ORDER BY `trns_trailers`.`name` ASC
+____________________________________________________________________________________________________
+SELECT `trns_loadtypes`.`loadtype_id`, `trns_loadtypes`.`load_name`, IFNULL(loadtype_name, load_name) load_name
+FROM `trns_loadtypes`
+LEFT JOIN `trns_language_loadtypes` ON `trns_loadtypes`.`loadtype_id`=`trns_language_loadtypes`.`loadtype_id` AND `trns_language_loadtypes`.`is_blocked` ="0" AND `trns_language_loadtypes`.`is_deleted` ="0" AND `trns_language_loadtypes`.`language_id` ="2"
+WHERE `trns_loadtypes`.`is_deleted` = '0'
+ORDER BY `trns_loadtypes`.`load_name` ASC
+____________________________________________________________________________________________________
+SELECT `trns_requests`.*, IFNULL((SELECT concat(`trns_request_driver_locations`.`latitude`, ', ', `trns_request_driver_locations`.`longitude`) FROM trns_request_driver_locations WHERE trns_request_driver_locations.request_id=trns_requests.request_id ORDER BY driver_location_id DESC limit 0, 1), '') as driver_location, IFNULL((SELECT COUNT(trns_request_bids.request_id) FROM trns_request_bids, trns_users 
+														  WHERE trns_request_bids.user_id=trns_users.user_id 
+														  AND trns_request_bids.is_deleted='0' 
+														  AND trns_users.is_deleted='0'
+														  AND trns_request_bids.request_id = trns_requests.request_id), 0) AS total_bids, `trns_users`.`first_name` `cus_first_name`, `trns_users`.`last_name` `cus_last_name`, `trns_users`.`email` `cus_email`, `trns_users`.`phone_no` `cus_phone_no`, `trns_users`.`image` `cus_image`, `trns_users`.`firebase_id` `cus_firebase_id`, `trns_users`.`company_name` `cus_company_name`, IFNULL(trns_user_transporter.id_transporter, "") id_transporter, IFNULL(cir.first_name, "") cus_first_name_cir, IFNULL(cir.last_name, "") cus_last_name_cir, IFNULL(cir.email, "") cus_email_cir, IFNULL(cir.phone_no, "") cus_phone_no_cir, IFNULL(cir.image, "") cus_image_cir, IFNULL(cir.firebase_id, "") cus_firebase_id_cir, IFNULL(cir.company_name, "") cus_company_name_cir, `trns_trailers`.`min_load` `trailer_min_load`, `trns_trailers`.`max_load` `trailer_max_load`, `trns_trailers`.`image` `trailer_image`, IFNULL(trailer_name, name) trailer_name, `trns_loadtypes`.`load_name`, IFNULL(trans.first_name, "") trans_first_name, IFNULL(trans.last_name, "") trans_last_name, IFNULL(trans.email, "") trans_email, IFNULL(trans.phone_no, "") trans_phone_no, IFNULL(trans.company_name, "") trans_company_name, IFNULL(driver.first_name, "") driver_first_name, IFNULL(driver.last_name, "") driver_last_name, IFNULL(driver.email, "") driver_email, IFNULL(driver.phone_no, "") driver_phone_no, IFNULL(driver.image, "") driver_image, IFNULL(trns_vehicles.plate_no, "") plate_no, IFNULL(trns_vehicles.vehicle_color, "") vehicle_color, IFNULL(trns_request_bids.bid_id, "") bid_id, IFNULL(trns_request_bids.bid_amount, "") bid_amount, IFNULL(trns_request_bids.bid_status, "") bid_status, IFNULL(trns_request_bids.bid_comment, "") bid_comment, IFNULL(trns_request_bids.cancel_comment, "") cancel_comment, IFNULL(trns_request_bids.create_date, "") bid_create_date, IFNULL(TRUNCATE(AVG(cusrating.rating), 2), 0) cus_rating, IFNULL(TRUNCATE(AVG(transrating.rating), 2), 0) trans_rating, IFNULL(TRUNCATE(AVG(driverrating.rating), 2), 0) driver_rating, IFNULL(requsertating.rating_id, "") cus_req_rating_id, IFNULL(requsertating.rating, "") cus_req_rating, IFNULL(requsertating.communication_rating, "") cus_req_communication_rating, IFNULL(requsertating.trust_rating, "") cus_req_trust_rating, IFNULL(requsertating.quality_rating, "") cus_req_quality_rating, IFNULL(requsertating.user_comment, "") cus_req_user_comment, IFNULL(reqtranstating.rating_id, "") trans_req_rating_id, IFNULL(reqtranstating.rating, "") trans_req_rating, IFNULL(reqtranstating.communication_rating, "") trans_req_communication_rating, IFNULL(reqtranstating.trust_rating, "") trans_req_trust_rating, IFNULL(reqtranstating.quality_rating, "") trans_req_quality_rating, IFNULL(reqtranstating.user_comment, "") trans_req_user_comment
+FROM `trns_requests`
+INNER JOIN `trns_users` ON `trns_requests`.`user_id`=`trns_users`.`user_id`
+LEFT JOIN `trns_user_transporter` ON `trns_requests`.`user_id`=`trns_user_transporter`.`id_customer`
+LEFT JOIN `trns_users` as `cir` ON `trns_requests`.`creater_id`=`cir`.`user_id`
+INNER JOIN `trns_trailers` ON `trns_requests`.`trailer_id`=`trns_trailers`.`trailer_id`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`language_id` ="2"
+INNER JOIN `trns_loadtypes` ON `trns_requests`.`loadtype_id`=`trns_loadtypes`.`loadtype_id`
+LEFT JOIN `trns_users` as `trans` ON `trns_requests`.`transporter_id`=`trans`.`user_id`
+LEFT JOIN `trns_users` as `driver` ON `trns_requests`.`driver_id`=`driver`.`user_id`
+LEFT JOIN `trns_vehicles` ON `trns_requests`.`vehicle_id`=`trns_vehicles`.`vehicle_id`
+LEFT JOIN `trns_request_bids` ON `trns_requests`.`bid_id`=`trns_request_bids`.`bid_id`
+LEFT JOIN `trns_user_ratings` as `cusrating` ON `trns_requests`.`user_id`=`cusrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `transrating` ON `trns_requests`.`transporter_id`=`transrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `driverrating` ON `trns_requests`.`driver_id`=`driverrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `requsertating` ON `trns_requests`.`user_id`=`requsertating`.`receiver_user_id` AND `trns_requests`.`request_id`=`requsertating`.`request_id` AND `requsertating`.`is_deleted` ="0"
+LEFT JOIN `trns_user_ratings` as `reqtranstating` ON `trns_requests`.`transporter_id`=`reqtranstating`.`receiver_user_id` AND `trns_requests`.`request_id`=`reqtranstating`.`request_id` AND `reqtranstating`.`is_deleted` ="0"
+WHERE `trns_requests`.`user_id` > '0'
+AND `trns_requests`.`request_status` = '0'
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `request_id`
+ORDER BY `trns_requests`.`pickup_date` DESC, `pickup_time` DESC
+____________________________________________________________________________________________________
+SELECT `trns_users`.`user_id`, `trns_users`.`first_name`, `trns_users`.`is_company`, `trns_users`.`is_user_verify`, `trns_users`.`user_type`, `trns_users`.`super_parent_id`, `trns_users`.`is_blocked`
+FROM `trns_users`
+WHERE `trns_users`.`email` = 'Jose.cama@ferreyros.com.pe'
+AND `trns_users`.`password` = '68992d9f3c3340fdd23a72abfa8c8c9b'
+AND `trns_users`.`user_type` = '1'
+AND `trns_users`.`is_company` = '1'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.`user_id`, `trns_users`.`first_name`, `trns_users`.`is_company`, `trns_users`.`is_user_verify`, `trns_users`.`user_type`, `trns_users`.`super_parent_id`, `trns_users`.`is_blocked`
+FROM `trns_users`
+WHERE `trns_users`.`email` = 'Jose.cama@ferreyros.com.pe'
+AND `trns_users`.`password` = '68992d9f3c3340fdd23a72abfa8c8c9b'
+AND `trns_users`.`user_type` = '1'
+AND `trns_users`.`is_company` = '1'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_users`.`user_id`, `trns_users`.`first_name`, `trns_users`.`is_company`, `trns_users`.`is_user_verify`, `trns_users`.`user_type`, `trns_users`.`super_parent_id`, `trns_users`.`is_blocked`
+FROM `trns_users`
+WHERE `trns_users`.`email` = 'romycespedes1977@gmail.com'
+AND `trns_users`.`password` = '25d55ad283aa400af464c76d713c07ad'
+AND `trns_users`.`user_type` = '1'
+AND `trns_users`.`is_company` = '1'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_user_transporter`.*
+FROM `trns_user_transporter`
+WHERE `trns_user_transporter`.`id_transporter` = '50'
+AND `trns_user_transporter`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_requests`.*, IFNULL((SELECT concat(`trns_request_driver_locations`.`latitude`, ', ', `trns_request_driver_locations`.`longitude`) FROM trns_request_driver_locations WHERE trns_request_driver_locations.request_id=trns_requests.request_id ORDER BY driver_location_id DESC limit 0, 1), '') as driver_location, IFNULL((SELECT COUNT(trns_request_bids.request_id) FROM trns_request_bids, trns_users 
+														  WHERE trns_request_bids.user_id=trns_users.user_id 
+														  AND trns_request_bids.is_deleted='0' 
+														  AND trns_users.is_deleted='0'
+														  AND trns_request_bids.request_id = trns_requests.request_id), 0) AS total_bids, `trns_users`.`first_name` `cus_first_name`, `trns_users`.`last_name` `cus_last_name`, `trns_users`.`email` `cus_email`, `trns_users`.`phone_no` `cus_phone_no`, `trns_users`.`image` `cus_image`, `trns_users`.`firebase_id` `cus_firebase_id`, `trns_users`.`company_name` `cus_company_name`, IFNULL(trns_user_transporter.id_transporter, "") id_transporter, IFNULL(cir.first_name, "") cus_first_name_cir, IFNULL(cir.last_name, "") cus_last_name_cir, IFNULL(cir.email, "") cus_email_cir, IFNULL(cir.phone_no, "") cus_phone_no_cir, IFNULL(cir.image, "") cus_image_cir, IFNULL(cir.firebase_id, "") cus_firebase_id_cir, IFNULL(cir.company_name, "") cus_company_name_cir, `trns_trailers`.`min_load` `trailer_min_load`, `trns_trailers`.`max_load` `trailer_max_load`, `trns_trailers`.`image` `trailer_image`, IFNULL(trailer_name, name) trailer_name, `trns_loadtypes`.`load_name`, IFNULL(trans.first_name, "") trans_first_name, IFNULL(trans.last_name, "") trans_last_name, IFNULL(trans.email, "") trans_email, IFNULL(trans.phone_no, "") trans_phone_no, IFNULL(trans.company_name, "") trans_company_name, IFNULL(driver.first_name, "") driver_first_name, IFNULL(driver.last_name, "") driver_last_name, IFNULL(driver.email, "") driver_email, IFNULL(driver.phone_no, "") driver_phone_no, IFNULL(driver.image, "") driver_image, IFNULL(trns_vehicles.plate_no, "") plate_no, IFNULL(trns_vehicles.vehicle_color, "") vehicle_color, IFNULL(trns_request_bids.bid_id, "") bid_id, IFNULL(trns_request_bids.bid_amount, "") bid_amount, IFNULL(trns_request_bids.bid_status, "") bid_status, IFNULL(trns_request_bids.bid_comment, "") bid_comment, IFNULL(trns_request_bids.cancel_comment, "") cancel_comment, IFNULL(trns_request_bids.create_date, "") bid_create_date, IFNULL(TRUNCATE(AVG(cusrating.rating), 2), 0) cus_rating, IFNULL(TRUNCATE(AVG(transrating.rating), 2), 0) trans_rating, IFNULL(TRUNCATE(AVG(driverrating.rating), 2), 0) driver_rating, IFNULL(requsertating.rating_id, "") cus_req_rating_id, IFNULL(requsertating.rating, "") cus_req_rating, IFNULL(requsertating.communication_rating, "") cus_req_communication_rating, IFNULL(requsertating.trust_rating, "") cus_req_trust_rating, IFNULL(requsertating.quality_rating, "") cus_req_quality_rating, IFNULL(requsertating.user_comment, "") cus_req_user_comment, IFNULL(reqtranstating.rating_id, "") trans_req_rating_id, IFNULL(reqtranstating.rating, "") trans_req_rating, IFNULL(reqtranstating.communication_rating, "") trans_req_communication_rating, IFNULL(reqtranstating.trust_rating, "") trans_req_trust_rating, IFNULL(reqtranstating.quality_rating, "") trans_req_quality_rating, IFNULL(reqtranstating.user_comment, "") trans_req_user_comment, IFNULL(trans_bid.bid_id, "") trans_bid_id, IFNULL(trans_bid.bid_amount, "") trans_bid_amount, IFNULL(trans_bid.bid_status, "") trans_bid_status, IFNULL(trans_bid.bid_comment, "") trans_bid_comment, IFNULL(trans_bid.cancel_comment, "") trans_cancel_comment, IFNULL(trans_bid.create_date, "") trans_bid_create_date
+FROM `trns_requests`
+INNER JOIN `trns_users` ON `trns_requests`.`user_id`=`trns_users`.`user_id`
+LEFT JOIN `trns_user_transporter` ON `trns_requests`.`user_id`=`trns_user_transporter`.`id_customer`
+LEFT JOIN `trns_users` as `cir` ON `trns_requests`.`creater_id`=`cir`.`user_id`
+INNER JOIN `trns_trailers` ON `trns_requests`.`trailer_id`=`trns_trailers`.`trailer_id`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`language_id` ="2"
+INNER JOIN `trns_loadtypes` ON `trns_requests`.`loadtype_id`=`trns_loadtypes`.`loadtype_id`
+LEFT JOIN `trns_users` as `trans` ON `trns_requests`.`transporter_id`=`trans`.`user_id`
+LEFT JOIN `trns_users` as `driver` ON `trns_requests`.`driver_id`=`driver`.`user_id`
+LEFT JOIN `trns_vehicles` ON `trns_requests`.`vehicle_id`=`trns_vehicles`.`vehicle_id`
+LEFT JOIN `trns_request_bids` ON `trns_requests`.`bid_id`=`trns_request_bids`.`bid_id`
+LEFT JOIN `trns_user_ratings` as `cusrating` ON `trns_requests`.`user_id`=`cusrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `transrating` ON `trns_requests`.`transporter_id`=`transrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `driverrating` ON `trns_requests`.`driver_id`=`driverrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `requsertating` ON `trns_requests`.`user_id`=`requsertating`.`receiver_user_id` AND `trns_requests`.`request_id`=`requsertating`.`request_id` AND `requsertating`.`is_deleted` ="0"
+LEFT JOIN `trns_user_ratings` as `reqtranstating` ON `trns_requests`.`transporter_id`=`reqtranstating`.`receiver_user_id` AND `trns_requests`.`request_id`=`reqtranstating`.`request_id` AND `reqtranstating`.`is_deleted` ="0"
+LEFT JOIN `trns_request_bids` as `trans_bid` ON `trns_requests`.`request_id`=`trans_bid`.`request_id` AND `trans_bid`.`user_id` ="50"
+WHERE IF(`trns_requests`.`close_bid_time`IS NULL ,  DATE_ADD(NOW(), INTERVAL 2 HOUR)  , `trns_requests`.`close_bid_time`) >= '2021-12-13 15:38:56'
+AND `trns_requests`.`request_status` < '2'
+AND `trns_requests`.`is_deleted` = 0
+GROUP BY `request_id`
+ORDER BY `trns_requests`.`pickup_date` DESC, `pickup_time` DESC
+____________________________________________________________________________________________________
+SELECT `trns_users`.`user_id`, `trns_users`.`showpass`, `trns_users`.`first_name`, `trns_users`.`last_name`, `trns_users`.`phone_no`, `trns_users`.`email`, `trns_users`.`dni_no`, `trns_users`.`ruc_no`, `trns_users`.`company_licence_no`, `trns_users`.`licence_no`, `trns_users`.`image`, `trns_users`.`is_blocked`, `trns_users`.`user_status`, IFNULL(TRUNCATE(AVG(rating), 2), 0) rating
+FROM `trns_users`
+LEFT JOIN `trns_user_ratings` ON `trns_users`.`user_id`=`trns_user_ratings`.`receiver_user_id` AND `trns_user_ratings`.`is_deleted` ="0"
+WHERE `trns_users`.`parent_user_id` = '50'
+AND `trns_users`.`user_type` = '1'
+AND `trns_users`.`is_company` = '0'
+AND `trns_users`.`is_deleted` = '0'
+GROUP BY `user_id`
+____________________________________________________________________________________________________
+SELECT `trns_users`.`user_id`, `trns_users`.`super_parent_id`, `trns_users`.`first_name`, `trns_users`.`last_name`, `trns_users`.`email`, `trns_users`.`phone_no`, `trns_users`.`user_type`, `trns_users`.`is_company`
+FROM `trns_users`
+WHERE `trns_users`.`user_id` = '50'
+AND `trns_users`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_requests`.*, `trns_users`.`first_name` `cus_first_name`, `trns_users`.`last_name` `cus_last_name`, `trns_users`.`email` `cus_email`, `trns_users`.`phone_no` `cus_phone_no`, `trns_users`.`image` `cus_image`, `trns_users`.`firebase_id` `cus_firebase_id`, `trns_users`.`company_name` `cus_company_name`, IFNULL(trns_user_transporter.id_transporter, "") id_transporter, IFNULL(cir.first_name, "") cus_first_name_cir, IFNULL(cir.last_name, "") cus_last_name_cir, IFNULL(cir.email, "") cus_email_cir, IFNULL(cir.phone_no, "") cus_phone_no_cir, IFNULL(cir.image, "") cus_image_cir, IFNULL(cir.firebase_id, "") cus_firebase_id_cir, IFNULL(cir.company_name, "") cus_company_name_cir, `trns_trailers`.`min_load` `trailer_min_load`, `trns_trailers`.`max_load` `trailer_max_load`, `trns_trailers`.`image` `trailer_image`, IFNULL(trailer_name, name) trailer_name, `trns_loadtypes`.`load_name`, IFNULL(trans.first_name, "") trans_first_name, IFNULL(trans.last_name, "") trans_last_name, IFNULL(trans.email, "") trans_email, IFNULL(trans.phone_no, "") trans_phone_no, IFNULL(trans.company_name, "") trans_company_name, IFNULL(driver.first_name, "") driver_first_name, IFNULL(driver.last_name, "") driver_last_name, IFNULL(driver.email, "") driver_email, IFNULL(driver.phone_no, "") driver_phone_no, IFNULL(driver.image, "") driver_image, IFNULL(trns_vehicles.plate_no, "") plate_no, IFNULL(trns_vehicles.vehicle_color, "") vehicle_color, IFNULL(trans_bid.bid_id, "") trans_bid_id, IFNULL(trans_bid.bid_amount, "") trans_bid_amount, IFNULL(trans_bid.bid_status, "") trans_bid_status, IFNULL(trans_bid.bid_comment, "") trans_bid_comment, IFNULL(trans_bid.cancel_comment, "") trans_cancel_comment, IFNULL(trans_bid.create_date, "") trans_bid_create_date
+FROM `trns_requests`
+INNER JOIN `trns_users` ON `trns_requests`.`user_id`=`trns_users`.`user_id`
+LEFT JOIN `trns_user_transporter` ON `trns_requests`.`user_id`=`trns_user_transporter`.`id_customer`
+LEFT JOIN `trns_users` as `cir` ON `trns_requests`.`creater_id`=`cir`.`user_id`
+INNER JOIN `trns_trailers` ON `trns_requests`.`trailer_id`=`trns_trailers`.`trailer_id`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`language_id` ="2"
+INNER JOIN `trns_loadtypes` ON `trns_requests`.`loadtype_id`=`trns_loadtypes`.`loadtype_id`
+LEFT JOIN `trns_users` as `trans` ON `trns_requests`.`transporter_id`=`trans`.`user_id`
+LEFT JOIN `trns_users` as `driver` ON `trns_requests`.`driver_id`=`driver`.`user_id`
+LEFT JOIN `trns_vehicles` ON `trns_requests`.`vehicle_id`=`trns_vehicles`.`vehicle_id`
+LEFT JOIN `trns_request_bids` as `trans_bid` ON `trns_requests`.`request_id`=`trans_bid`.`request_id` AND `trans_bid`.`user_id` ="50"
+WHERE `trns_requests`.`transporter_id` IN('0', '50')
+AND `trns_requests`.`is_deleted` = '0'
+GROUP BY `request_id`
+ORDER BY `trns_requests`.`pickup_date` DESC, `pickup_time` DESC
+____________________________________________________________________________________________________
+SELECT `trns_trailers`.`trailer_id`, `trns_trailers`.`name`, `trns_trailers`.`image`, `trns_trailers`.`min_load`, `trns_trailers`.`max_load`, IFNULL(trailer_name, name) name
+FROM `trns_trailers`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`is_blocked` ="0" AND `trns_language_trailers`.`is_deleted` ="0" AND `trns_language_trailers`.`language_id` ="2"
+WHERE `trns_trailers`.`is_deleted` = '0'
+ORDER BY `trns_trailers`.`name` ASC
+____________________________________________________________________________________________________
+SELECT `trns_loadtypes`.`loadtype_id`, `trns_loadtypes`.`load_name`, IFNULL(loadtype_name, load_name) load_name
+FROM `trns_loadtypes`
+LEFT JOIN `trns_language_loadtypes` ON `trns_loadtypes`.`loadtype_id`=`trns_language_loadtypes`.`loadtype_id` AND `trns_language_loadtypes`.`is_blocked` ="0" AND `trns_language_loadtypes`.`is_deleted` ="0" AND `trns_language_loadtypes`.`language_id` ="2"
+WHERE `trns_loadtypes`.`is_deleted` = '0'
+ORDER BY `trns_loadtypes`.`load_name` ASC
+____________________________________________________________________________________________________
+SELECT `trns_user_transporter`.*
+FROM `trns_user_transporter`
+WHERE `trns_user_transporter`.`id_transporter` = '50'
+AND `trns_user_transporter`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_requests`.*, IFNULL((SELECT concat(`trns_request_driver_locations`.`latitude`, ', ', `trns_request_driver_locations`.`longitude`) FROM trns_request_driver_locations WHERE trns_request_driver_locations.request_id=trns_requests.request_id ORDER BY driver_location_id DESC limit 0, 1), '') as driver_location, IFNULL((SELECT COUNT(trns_request_bids.request_id) FROM trns_request_bids, trns_users 
+														  WHERE trns_request_bids.user_id=trns_users.user_id 
+														  AND trns_request_bids.is_deleted='0' 
+														  AND trns_users.is_deleted='0'
+														  AND trns_request_bids.request_id = trns_requests.request_id), 0) AS total_bids, `trns_users`.`first_name` `cus_first_name`, `trns_users`.`last_name` `cus_last_name`, `trns_users`.`email` `cus_email`, `trns_users`.`phone_no` `cus_phone_no`, `trns_users`.`image` `cus_image`, `trns_users`.`firebase_id` `cus_firebase_id`, `trns_users`.`company_name` `cus_company_name`, IFNULL(trns_user_transporter.id_transporter, "") id_transporter, IFNULL(cir.first_name, "") cus_first_name_cir, IFNULL(cir.last_name, "") cus_last_name_cir, IFNULL(cir.email, "") cus_email_cir, IFNULL(cir.phone_no, "") cus_phone_no_cir, IFNULL(cir.image, "") cus_image_cir, IFNULL(cir.firebase_id, "") cus_firebase_id_cir, IFNULL(cir.company_name, "") cus_company_name_cir, `trns_trailers`.`min_load` `trailer_min_load`, `trns_trailers`.`max_load` `trailer_max_load`, `trns_trailers`.`image` `trailer_image`, IFNULL(trailer_name, name) trailer_name, `trns_loadtypes`.`load_name`, IFNULL(trans.first_name, "") trans_first_name, IFNULL(trans.last_name, "") trans_last_name, IFNULL(trans.email, "") trans_email, IFNULL(trans.phone_no, "") trans_phone_no, IFNULL(trans.company_name, "") trans_company_name, IFNULL(driver.first_name, "") driver_first_name, IFNULL(driver.last_name, "") driver_last_name, IFNULL(driver.email, "") driver_email, IFNULL(driver.phone_no, "") driver_phone_no, IFNULL(driver.image, "") driver_image, IFNULL(trns_vehicles.plate_no, "") plate_no, IFNULL(trns_vehicles.vehicle_color, "") vehicle_color, IFNULL(trns_request_bids.bid_id, "") bid_id, IFNULL(trns_request_bids.bid_amount, "") bid_amount, IFNULL(trns_request_bids.bid_status, "") bid_status, IFNULL(trns_request_bids.bid_comment, "") bid_comment, IFNULL(trns_request_bids.cancel_comment, "") cancel_comment, IFNULL(trns_request_bids.create_date, "") bid_create_date, IFNULL(TRUNCATE(AVG(cusrating.rating), 2), 0) cus_rating, IFNULL(TRUNCATE(AVG(transrating.rating), 2), 0) trans_rating, IFNULL(TRUNCATE(AVG(driverrating.rating), 2), 0) driver_rating, IFNULL(requsertating.rating_id, "") cus_req_rating_id, IFNULL(requsertating.rating, "") cus_req_rating, IFNULL(requsertating.communication_rating, "") cus_req_communication_rating, IFNULL(requsertating.trust_rating, "") cus_req_trust_rating, IFNULL(requsertating.quality_rating, "") cus_req_quality_rating, IFNULL(requsertating.user_comment, "") cus_req_user_comment, IFNULL(reqtranstating.rating_id, "") trans_req_rating_id, IFNULL(reqtranstating.rating, "") trans_req_rating, IFNULL(reqtranstating.communication_rating, "") trans_req_communication_rating, IFNULL(reqtranstating.trust_rating, "") trans_req_trust_rating, IFNULL(reqtranstating.quality_rating, "") trans_req_quality_rating, IFNULL(reqtranstating.user_comment, "") trans_req_user_comment, IFNULL(trans_bid.bid_id, "") trans_bid_id, IFNULL(trans_bid.bid_amount, "") trans_bid_amount, IFNULL(trans_bid.bid_status, "") trans_bid_status, IFNULL(trans_bid.bid_comment, "") trans_bid_comment, IFNULL(trans_bid.cancel_comment, "") trans_cancel_comment, IFNULL(trans_bid.create_date, "") trans_bid_create_date
+FROM `trns_requests`
+INNER JOIN `trns_users` ON `trns_requests`.`user_id`=`trns_users`.`user_id`
+LEFT JOIN `trns_user_transporter` ON `trns_requests`.`user_id`=`trns_user_transporter`.`id_customer`
+LEFT JOIN `trns_users` as `cir` ON `trns_requests`.`creater_id`=`cir`.`user_id`
+INNER JOIN `trns_trailers` ON `trns_requests`.`trailer_id`=`trns_trailers`.`trailer_id`
+LEFT JOIN `trns_language_trailers` ON `trns_trailers`.`trailer_id`=`trns_language_trailers`.`trailer_id` AND `trns_language_trailers`.`language_id` ="2"
+INNER JOIN `trns_loadtypes` ON `trns_requests`.`loadtype_id`=`trns_loadtypes`.`loadtype_id`
+LEFT JOIN `trns_users` as `trans` ON `trns_requests`.`transporter_id`=`trans`.`user_id`
+LEFT JOIN `trns_users` as `driver` ON `trns_requests`.`driver_id`=`driver`.`user_id`
+LEFT JOIN `trns_vehicles` ON `trns_requests`.`vehicle_id`=`trns_vehicles`.`vehicle_id`
+LEFT JOIN `trns_request_bids` ON `trns_requests`.`bid_id`=`trns_request_bids`.`bid_id`
+LEFT JOIN `trns_user_ratings` as `cusrating` ON `trns_requests`.`user_id`=`cusrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `transrating` ON `trns_requests`.`transporter_id`=`transrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `driverrating` ON `trns_requests`.`driver_id`=`driverrating`.`receiver_user_id`
+LEFT JOIN `trns_user_ratings` as `requsertating` ON `trns_requests`.`user_id`=`requsertating`.`receiver_user_id` AND `trns_requests`.`request_id`=`requsertating`.`request_id` AND `requsertating`.`is_deleted` ="0"
+LEFT JOIN `trns_user_ratings` as `reqtranstating` ON `trns_requests`.`transporter_id`=`reqtranstating`.`receiver_user_id` AND `trns_requests`.`request_id`=`reqtranstating`.`request_id` AND `reqtranstating`.`is_deleted` ="0"
+LEFT JOIN `trns_request_bids` as `trans_bid` ON `trns_requests`.`request_id`=`trans_bid`.`request_id` AND `trans_bid`.`user_id` ="50"
+WHERE IF(`trns_requests`.`close_bid_time`IS NULL ,  DATE_ADD(NOW(), INTERVAL 2 HOUR)  , `trns_requests`.`close_bid_time`) >= '2021-12-13 15:39:25'
+AND `trns_requests`.`request_status` < '2'
+AND `trns_requests`.`is_deleted` = 0
+GROUP BY `request_id`
+ORDER BY `trns_requests`.`pickup_date` DESC, `pickup_time` DESC
+____________________________________________________________________________________________________
+SELECT `trns_documenttypes`.`document_title`, `trns_documenttypes`.`documenttype_id`
+FROM `trns_documenttypes`
+WHERE `trns_documenttypes`.`document_for` = '1'
+AND `trns_documenttypes`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_user_documents`.`user_document_id`, `trns_user_documents`.`user_id`, `trns_user_documents`.`documenttype_id`, `trns_user_documents`.`file_name`, `trns_user_documents`.`document_status`, `trns_user_documents`.`is_blocked`, `trns_documenttypes`.`document_title`
+FROM `trns_user_documents`
+INNER JOIN `trns_documenttypes` ON `trns_user_documents`.`documenttype_id`=`trns_documenttypes`.`documenttype_id`
+WHERE `trns_user_documents`.`user_id` = '50'
+AND `trns_user_documents`.`uploader_id` = '50'
+AND `trns_user_documents`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_documenttypes`.`document_title`, `trns_documenttypes`.`documenttype_id`
+FROM `trns_documenttypes`
+WHERE `trns_documenttypes`.`document_for` = '1'
+AND `trns_documenttypes`.`is_deleted` = '0'
+____________________________________________________________________________________________________
+SELECT `trns_documenttypes`.`document_title`, `trns_documenttypes`.`documenttype_id`
+FROM `trns_documenttypes`
+WHERE `trns_documenttypes`.`document_for` = '1'
+AND `trns_documenttypes`.`is_deleted` = '0'
